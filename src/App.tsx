@@ -1,11 +1,18 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Editais from './components/Pages/Editais';
+import Erro404 from './components/Pages/Erro404';
+import Home from './components/Pages/Home';
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
-      Formandos campeões
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/editais" component={Editais} exact />
+        <Route component={Erro404} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
